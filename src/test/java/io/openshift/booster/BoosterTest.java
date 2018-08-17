@@ -31,7 +31,8 @@ public class BoosterTest {
 	public void testKiran() {
 		this.webClient.get().uri("/kiran")
 				.accept(MediaType.TEXT_PLAIN)
-				.exchange();
+				.exchange()
+				.expectBody(String.class).isEqualTo("World");
 	}
 
 
