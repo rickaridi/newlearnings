@@ -8,13 +8,13 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.reactive.function.BodyInserters;
 
 @Component
-public class EchoHandler {
+public class WeatherShareHandler {
 
-	public Mono<ServerResponse> echo(ServerRequest request) {
+	public Mono<ServerResponse> weather(ServerRequest request) {
 		return ServerResponse.ok().body(request.bodyToMono(String.class), String.class);
 	}
 
-	public Mono<ServerResponse> kiran(ServerRequest request) {
+	public Mono<ServerResponse> sharePrice(ServerRequest request) {
 		return ServerResponse.ok().body(BodyInserters.fromObject("World"));
 	}
 }

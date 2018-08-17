@@ -18,8 +18,8 @@ public class Booster {
 	}
 
 	@Bean
-	public RouterFunction<ServerResponse> monoRouterFunction(EchoHandler echoHandler) {
-		return route(POST("/echo"), echoHandler::echo).andRoute(GET("/kiran"), echoHandler::kiran);
+	public RouterFunction<ServerResponse> monoRouterFunction(WeatherShareHandler handler) {
+		return route(POST("/weather"), handler::weather).andRoute(GET("/shareprice"), handler::sharePrice);
 	}
 
 }

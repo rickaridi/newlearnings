@@ -21,7 +21,7 @@ public class BoosterTest {
 
 	@Test
 	public void testEcho() {
-		this.webClient.post().uri("/echo").contentType(MediaType.TEXT_PLAIN)
+		this.webClient.post().uri("/weather").contentType(MediaType.TEXT_PLAIN)
 				.accept(MediaType.TEXT_PLAIN)
 				.body(Mono.just("Hello WebFlux!"), String.class).exchange()
 				.expectBody(String.class).isEqualTo("Hello WebFlux!");
@@ -29,8 +29,8 @@ public class BoosterTest {
 
 	@Test
 	public void testKiran() {
-		this.webClient.get().uri("/kiran")
-				.accept(MediaType.TEXT_PLAIN)
+		this.webClient.get().uri("/shareprice")
+				.accept(MediaType.ALL)
 				.exchange()
 				.expectBody(String.class).isEqualTo("World");
 	}
