@@ -23,6 +23,7 @@ public class WeatherShareHandler {
 
 	public Mono<ServerResponse> sharePrice(ServerRequest request) {
 	    LOG.info("Got request for Share Price: {}", request.queryParams());
+	    LOG.info("Got request fron TFA repo for Share Price: {}", request.queryParams());
 		return ServerResponse.ok().body(BodyInserters.fromObject("World"));
 	}
 }
