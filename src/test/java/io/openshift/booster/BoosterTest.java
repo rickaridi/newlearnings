@@ -21,15 +21,15 @@ public class BoosterTest {
 
 	@Test
 	public void testEcho() {
-		this.webClient.post().uri("/weather").contentType(MediaType.TEXT_PLAIN)
+		this.webClient.get().uri("/weather?city={city}", "23059")
 				.accept(MediaType.TEXT_PLAIN)
-				.body(Mono.just("Hello WebFlux!"), String.class).exchange()
-				.expectBody(String.class).isEqualTo("Hello WebFlux!");
+                .exchange()
+				.expectBody(String.class).isEqualTo("23059");
 	}
 
 	@Test
 	public void testKiran() {
-		this.webClient.get().uri("/shareprice")
+		this.webClient.get().uri("/shareprice?symbol={symbol}", "COF")
 				.accept(MediaType.ALL)
 				.exchange()
 				.expectBody(String.class).isEqualTo("World");
